@@ -121,7 +121,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        //Definition des critères de selection du fournisseur de position
+        //Definition des critères de selection du fournisseur de position.
         Criteria critere = new Criteria();
         critere.setAccuracy(Criteria.ACCURACY_FINE);
         critere.setCostAllowed(false);
