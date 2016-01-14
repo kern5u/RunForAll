@@ -102,7 +102,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                     pause.setEnabled(false);
 
-                    //Affichage de la boite de dialog
+                    //Affichage de la boite de dialog pour fin
                     AlertDFragment alertdFragment = new AlertDFragment();
                     alertdFragment.show(fm, "Run Terminé");
 
