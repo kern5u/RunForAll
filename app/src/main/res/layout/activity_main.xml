@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="fr.esstin.run4all.MainActivity"
+    android:background="@drawable/course"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+
+    <ImageView android:background="@drawable/run4all"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="false"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_gravity="top|right" />
+
+    <ImageButton android:background="@drawable/capture"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="Start"
+        android:id="@+id/button_start"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="false"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center_vertical|right"/>
+
+    <ImageButton android:background="@drawable/perf"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="Performance"
+        android:id="@+id/button_perf"
+        android:layout_below="@+id/button_start"
+        android:layout_alignLeft="@+id/button_start"
+        android:layout_alignStart="@+id/button_start"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="right" />
+
+</LinearLayout>
