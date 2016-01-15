@@ -42,7 +42,7 @@ public class DistanceFragment extends Fragment {
         //Liste des Entry contenant les distances parcourues
         ArrayList<Entry> distanceData = new ArrayList<>();
 
-        //Définition des valeurs de l'axe des ordonnées et des l'abscisses
+        //Définition des valeurs de l'axe des ordonnées et des abscisses
         ArrayList<String> xVals = new ArrayList<>();
         for (int i=0; i<listSize; i++){
             distanceData.add(new Entry(distance.get(i),i)); //ordronnées
