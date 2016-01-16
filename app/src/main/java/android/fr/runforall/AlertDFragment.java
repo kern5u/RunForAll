@@ -15,7 +15,7 @@ public class AlertDFragment extends DialogFragment{
         ok_pressed = true;
         return new AlertDialog.Builder(getActivity())
                 // Set Dialog Icon
-                .setIcon(R.drawable.image_play)
+                .setIcon(R.mipmap.ic_launcher)
                         // Set Dialog Title
                 .setTitle("Run Terminé")
                         // Set Dialog Message

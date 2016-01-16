@@ -31,8 +31,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="android.fr.runforall.MainActivity" />
         </activity>
-
-        <activity android:name=".PerfFragment"/>
+        <activity android:name=".PerfFragment" />
     </application>
 
 </manifest>

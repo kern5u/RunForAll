@@ -67,7 +67,7 @@ public class DistanceFragment extends Fragment {
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
 
         rightAxis.setEnabled(false);
-        leftAxis.setStartAtZero(false);
+        leftAxis.setStartAtZero(true);
         chart.setTouchEnabled(true);
         chart.setVisibleXRangeMaximum(4.0f);
 

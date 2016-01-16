@@ -69,7 +69,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
         //===================================================
 
-        timestamp = System.currentTimeMillis()/1000;
+        timestamp = System.currentTimeMillis();
 
         bdd = new DataBaseHandler(this);
 
@@ -98,6 +98,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 if(!AlertDFragment.ok_pressed) {
                     temps = (SystemClock.elapsedRealtime() - chrono.getBase()) / 1000;//Recupération du temps de course
                     distance = (float) (Math.round(distance / 100) / 10);
+                    Log.d("Debug",String.valueOf(timestamp));
                     bdd.insertRunData(timestamp, temps, distance, distance / (temps * 60));//Envoie des données à la BDD
 
                     pause.setEnabled(false);
