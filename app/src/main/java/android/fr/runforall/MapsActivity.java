@@ -254,11 +254,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         double secondes = temps % 60;
 
         if (heure == 0 && minutes == 0) {
-            return String.valueOf(secondes) + " sec";
+            return String.valueOf((int)secondes) + " sec";
         } else if (heure == 0) {
-            return String.valueOf(minutes) + " min " + String.valueOf(secondes) + " sec";
+            return String.valueOf((int)minutes) + " min " + String.valueOf((int)secondes) + " sec";
         } else {
-            return String.valueOf(heure) + " h " + String.valueOf(minutes) + " min " + String.valueOf(secondes) + " sec";
+            return String.valueOf((int)heure) + " h " + String.valueOf((int)minutes) + " min " + String.valueOf((int)secondes) + " sec";
         }
     }
 }
