@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -163,7 +162,6 @@ public class DataBaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         //Pour parser la chaine de charactères
         String str[] = date.split("\\s");
-        Log.d("Debug", "str[0] = " + str[0]);
         db.delete(DONNEES_TABLE_NAME, "id=?", new String[]{str[0]});
     }
 

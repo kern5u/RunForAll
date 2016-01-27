@@ -12,7 +12,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Chronometer;
@@ -62,12 +61,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        //====TEST POUR LA GESTION DU LOCK DU TEL===========
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON|
-                WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD|
-                WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED|
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON |
+                WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD |
+                WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED |
                 WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
-        //===================================================
 
         timestamp = System.currentTimeMillis();
 
@@ -97,9 +94,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 if(!AlertDFragment.ok_pressed) {
                     temps = (SystemClock.elapsedRealtime() - chrono.getBase()) / 1000;//Recupération du temps de course
-                    distance = (float) (Math.round(distance / 100) / 10);
-                    Log.d("Debug",String.valueOf(timestamp));
-                    bdd.insertRunData(timestamp, temps, distance, distance / (temps * 60));//Envoie des données à la BDD
+                    distance = (Math.round(distance / 100) / 10);
+                    bdd.insertRunData(timestamp, temps, distance, distance * 3600 / temps);//Envoie des données à la BDD
 
                     pause.setEnabled(false);
 
@@ -173,7 +169,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         enregistrement_coordonnees[0] = latitude;
                         enregistrement_coordonnees[1] = longitude;
                         distance += result[0];
-                        Log.d("Distance", "Distance = " + distance);
                     }
                 } else {
                     first_passage = true;
@@ -210,7 +205,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onPause(){
         super.onPause();
         basePause = gestionPauseChrono(true,chrono,basePause);
-        //Durée du rafraichissement (ms)/distance de rafr (m)
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions

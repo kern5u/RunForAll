@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -111,7 +110,6 @@ public class DeleteEntryFragment extends Fragment implements OnItemSelectedListe
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // Prise en compte de l'item sélectionné
         date_coisie = parent.getItemAtPosition(position).toString();
-        Log.d("Debug", "Label choisi : "+date_coisie);
     }
 
     @Override

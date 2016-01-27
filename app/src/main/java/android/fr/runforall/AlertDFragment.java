@@ -11,7 +11,6 @@ public class AlertDFragment extends DialogFragment{
     public static boolean ok_pressed = false;
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-
         ok_pressed = true;
         return new AlertDialog.Builder(getActivity())
                 // Set Dialog Icon
