@@ -12,8 +12,6 @@ public class MainActivity extends Activity {
     ImageButton but_start = null;
     ImageButton but_perf = null;
 
-    //=====POUR DEBUG======
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
